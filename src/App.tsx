@@ -16,6 +16,7 @@ import Written from './pages/Written';
 import Spoken from './pages/Spoken';
 import Story from './pages/Story';
 import Elsewhere from './pages/Elsewhere';
+import NotFound from './pages/NotFound';
 
 function ScrollAndHashSync() {
   const location = useLocation();
@@ -69,13 +70,14 @@ function MainLayout() {
             <Route path="/blog" element={<BlogIndex />} />
             <Route
               path="/blog/why-indian-women-age-faster"
-              element={<BlogPost />}
+              element={<BlogPost slug="why-indian-women-age-faster" />}
             />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/written" element={<Written />} />
             <Route path="/spoken" element={<Spoken />} />
             <Route path="/story" element={<Story />} />
             <Route path="/elsewhere" element={<Elsewhere />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
       </main>

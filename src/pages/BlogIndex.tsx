@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { getAllPosts } from '../blog';
+import SEO from '../components/SEO';
 
 const blockVariants = {
   hidden: { opacity: 0, y: 6 },
@@ -29,18 +31,22 @@ const containerVariants = {
 };
 
 export default function BlogIndex() {
-  useEffect(() => {
-    document.title = 'Blog — Padmini Janaki';
-  }, []);
+  const posts = getAllPosts();
 
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      animate="show"
-      exit="exit"
-      className="space-y-12 sm:space-y-14 text-[17px] sm:text-[19px] leading-[1.7]"
-    >
+    <>
+      <SEO
+        title="Blog — Padmini Janaki"
+        description="Essays and field notes by Padmini Janaki on healthcare, technology and building for women."
+        pathname="/blog"
+      />
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+        exit="exit"
+        className="space-y-12 sm:space-y-14 text-[17px] sm:text-[19px] leading-[1.7]"
+      >
       {/* Header */}
       <motion.header variants={blockVariants} className="space-y-2">
         <div>
@@ -61,22 +67,24 @@ export default function BlogIndex() {
 
       {/* Post List */}
       <motion.section variants={blockVariants} className="space-y-8">
-        <article className="space-y-1.5">
-          <div>
-            <Link
-              to="/blog/why-indian-women-age-faster"
-              className="plain-link font-medium text-[18px] sm:text-[20px]"
-            >
-              Why do Indian women age faster?
-            </Link>
-          </div>
-          <div className="text-[13px] sm:text-[14px] text-[#6E6B65] dark:text-[#9E9A92]">
-            Padmini Janaki · 12 min read
-          </div>
-          <p className="text-[15px] sm:text-[16px] text-[#6E6B65] dark:text-[#9E9A92] leading-[1.6]">
-            Ten reasons — and five things to build — from a country where the measurement comes too late.
-          </p>
-        </article>
+        {posts.map((post) => (
+          <article key={post.slug} className="space-y-1.5">
+            <div>
+              <Link
+                to={`/blog/${post.slug}`}
+                className="plain-link font-medium text-[18px] sm:text-[20px]"
+              >
+                {post.title}
+              </Link>
+            </div>
+            <div className="text-[13px] sm:text-[14px] text-[#6E6B65] dark:text-[#9E9A92]">
+              {post.author} · {post.readTime}
+            </div>
+            <p className="text-[15px] sm:text-[16px] text-[#6E6B65] dark:text-[#9E9A92] leading-[1.6]">
+              {post.excerpt}
+            </p>
+          </article>
+        ))}
       </motion.section>
 
       {/* Footer */}
@@ -90,5 +98,6 @@ export default function BlogIndex() {
         <span>© 2026 Padmini Janaki</span>
       </motion.footer>
     </motion.div>
+    </>
   );
 }

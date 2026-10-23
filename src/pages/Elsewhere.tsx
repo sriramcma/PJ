@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import SEO from '../components/SEO';
 
 const blockVariants = {
   hidden: { opacity: 0, y: 6 },
@@ -29,18 +30,20 @@ const containerVariants = {
 };
 
 export default function Elsewhere() {
-  useEffect(() => {
-    document.title = 'Elsewhere — Padmini Janaki';
-  }, []);
-
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      animate="show"
-      exit="exit"
-      className="space-y-12 sm:space-y-14 text-[17px] sm:text-[19px] leading-[1.7]"
-    >
+    <>
+      <SEO
+        title="Elsewhere — Padmini Janaki"
+        description="Find Padmini Janaki on LinkedIn, Instagram and Mind & Mom, or reach her directly by email."
+        pathname="/elsewhere"
+      />
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+        exit="exit"
+        className="space-y-12 sm:space-y-14 text-[17px] sm:text-[19px] leading-[1.7]"
+      >
       <motion.header variants={blockVariants} className="space-y-2">
         <div>
           <Link
@@ -130,5 +133,6 @@ export default function Elsewhere() {
         <span>© 2026 Padmini Janaki</span>
       </motion.footer>
     </motion.div>
+    </>
   );
 }

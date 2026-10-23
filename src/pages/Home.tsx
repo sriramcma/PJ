@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
+import SEO from '../components/SEO';
 
 const blockVariants = {
   hidden: { opacity: 0, y: 6 },
@@ -29,20 +30,20 @@ const containerVariants = {
 };
 
 export default function Home() {
-  const [privacyOpen, setPrivacyOpen] = useState(false);
-
-  useEffect(() => {
-    document.title = 'Padmini Janaki';
-  }, []);
-
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      animate="show"
-      exit="exit"
-      className="space-y-12 sm:space-y-14 text-[17px] sm:text-[19px] leading-[1.7]"
-    >
+    <>
+      <SEO
+        title="Padmini Janaki — Health Tech, AI & Women's Healthcare"
+        description="Padmini Janaki builds healthcare technology at Mind & Mom and LIVF.Women, guiding over two lakh women through fertility and maternal journeys."
+        pathname="/"
+      />
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+        exit="exit"
+        className="space-y-12 sm:space-y-14 text-[17px] sm:text-[19px] leading-[1.7]"
+      >
       {/* 1. Name & 2. One-line identifier */}
       <motion.header variants={blockVariants} className="space-y-1.5">
         <h1 className="text-[21px] sm:text-[23px] font-semibold text-[#1A1A1A] dark:text-[#E8E4DE] tracking-tight leading-snug">
@@ -56,7 +57,13 @@ export default function Home() {
       {/* 3. Positioning paragraph */}
       <motion.section variants={blockVariants} className="space-y-4">
         <p>
-          Raised in Madras by a single mother who sold flowers at dawn, she learned early that when there is no safety net, you solve for survival. Today, she builds healthcare technology at Mind &amp; Mom and Livf.Women, guiding over two lakh women through fertility and maternal journeys. She wrote <em>Myths &amp; Millennials</em> because the books she needed as an ambitious Indian woman navigating social expectations simply did not exist.
+          My career has run through design, product and healthcare. I began as a UX designer at PayPal and became a technical product manager for disputes and fraud, a portfolio covering about $88 million in losses. I then joined Change Healthcare as a Senior Product Manager. For the past six years I have built and run LIVF.Women, a fertility clinic network in Chennai formerly called Mind &amp; Mom, a maternal health platform that has supported more than 200,000 women as an app, newsletters and a community.
+        </p>
+        <p>
+          I have worked with healthcare systems in India, the US, Sri Lanka and Nigeria. I spoke at the World Economic Forum representing India, and my work has been recognised with BW Businessworld’s 40 Under 40, TiE Chennai Entrepreneur of the Year and the INSEAD Singapore Impact Award.
+        </p>
+        <p>
+          Outside of work, health and fitness keep me grounded, through strength training and long walks, and I love writing!
         </p>
       </motion.section>
 
@@ -64,14 +71,20 @@ export default function Home() {
       <motion.section variants={blockVariants} className="space-y-6">
         <div>
           <h2 className="text-[18px] sm:text-[20px] font-medium text-[#1A1A1A] dark:text-[#E8E4DE]">
-            Index
+            Explore
           </h2>
-          <p className="text-[13px] sm:text-[14px] text-[#6E6B65] dark:text-[#9E9A92] tracking-[0.3px]">
-            Categories &amp; Nested Works
-          </p>
         </div>
 
         <ul className="space-y-4 list-none p-0 m-0">
+          <li>
+            <div>
+              <a href="mailto:pj@livfwomen.com" className="index-category-link">
+                Work with me
+              </a>
+              <span className="text-[#6E6B65] dark:text-[#9E9A92]"> — Advisory for hospitals and clinic networks</span>
+            </div>
+          </li>
+
           <li>
             <div>
               <Link to="/written" className="index-category-link">
@@ -95,7 +108,7 @@ export default function Home() {
               <Link to="/story" className="index-category-link">
                 Story
               </Link>
-              <span className="text-[#6E6B65] dark:text-[#9E9A92]"> — Mismatched computers, art, PayPal, svadharma, and health tech</span>
+              <span className="text-[#6E6B65] dark:text-[#9E9A92]"> — From design and product at PayPal and Change Healthcare to building LIVF.Women.</span>
             </div>
           </li>
 
@@ -111,7 +124,7 @@ export default function Home() {
           <li>
             <div>
               <Link to="/elsewhere" className="index-category-link">
-                Elsewhere
+                Elsewher
               </Link>
               <span className="text-[#6E6B65] dark:text-[#9E9A92]"> — LinkedIn, Instagram, Mind &amp; Mom, and direct email</span>
             </div>
@@ -122,34 +135,11 @@ export default function Home() {
       {/* Footer */}
       <motion.footer
         variants={blockVariants}
-        className="pt-14 sm:pt-16 flex items-center justify-between text-[13px] sm:text-[14px] text-[#6E6B65] dark:text-[#9E9A92]"
+        className="pt-14 sm:pt-16 text-[13px] sm:text-[14px] text-[#6E6B65] dark:text-[#9E9A92]"
       >
         <span>© 2026 Padmini Janaki</span>
-        <button
-          type="button"
-          onClick={() => setPrivacyOpen(!privacyOpen)}
-          className="plain-link cursor-pointer bg-transparent border-0 p-0"
-        >
-          Privacy
-        </button>
       </motion.footer>
-
-      {/* Inline Privacy Note */}
-      <AnimatePresence>
-        {privacyOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="overflow-hidden"
-          >
-            <p className="text-[13px] sm:text-[14px] text-[#6E6B65] dark:text-[#9E9A92] italic pt-1">
-              No tracking scripts. No analytics. No cookies. Just words on a page.
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </motion.div>
+    </>
   );
 }
