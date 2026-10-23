@@ -124,7 +124,7 @@ export default function Home() {
           <li>
             <div>
               <Link to="/elsewhere" className="index-category-link">
-                Elsewher
+                Elsewhere
               </Link>
               <span className="text-[#6E6B65] dark:text-[#9E9A92]"> — LinkedIn, Instagram, Mind &amp; Mom, and direct email</span>
             </div>
