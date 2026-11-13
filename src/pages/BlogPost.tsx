@@ -110,7 +110,8 @@ export default function BlogPost({ slug: propSlug }: BlogPostProps) {
             {post.title}
           </h1>
           <div className="text-[13px] sm:text-[14px] text-[#6E6B65] dark:text-[#9E9A92] tracking-[0.3px]">
-            {post.author} · {post.readTime}
+            {post.author}
+            {post.date ? ` · ${post.date}` : ''} · {post.readTime}
           </div>
         </header>
 

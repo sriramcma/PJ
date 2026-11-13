@@ -78,7 +78,8 @@ export default function BlogIndex() {
               </Link>
             </div>
             <div className="text-[13px] sm:text-[14px] text-[#6E6B65] dark:text-[#9E9A92]">
-              {post.author} · {post.readTime}
+              {post.author}
+              {post.date ? ` · ${post.date}` : ''} · {post.readTime}
             </div>
             <p className="text-[15px] sm:text-[16px] text-[#6E6B65] dark:text-[#9E9A92] leading-[1.6]">
               {post.excerpt}

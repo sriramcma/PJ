@@ -1,4 +1,5 @@
 import { BlogPostItem } from '../types';
+import { canYouBuyAnEmployeePost } from './can-you-buy-an-employee-who-never-quits';
 import { whyIndianWomenAgeFasterPost } from './why-indian-women-age-faster';
 
 /**
@@ -15,6 +16,7 @@ import { whyIndianWomenAgeFasterPost } from './why-indian-women-age-faster';
  */
 
 export const blogPosts: BlogPostItem[] = [
+  canYouBuyAnEmployeePost,
   whyIndianWomenAgeFasterPost,
   // Add more blog posts here as you write them
 ];

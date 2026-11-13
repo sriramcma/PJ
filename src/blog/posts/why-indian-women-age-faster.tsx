@@ -290,7 +290,7 @@ export const whyIndianWomenAgeFasterPost: BlogPostItem = {
   title: 'Why do Indian women age faster?',
   author: 'Padmini Janaki',
   readTime: '12 min read',
-  date: 'October 2026',
+  date: '13 Oct 2026',
   excerpt:
     'Ten reasons — and five things to build — from a country where the measurement comes too late.',
   Content: WhyIndianWomenAgeFasterContent,
