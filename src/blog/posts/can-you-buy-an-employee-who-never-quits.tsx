@@ -298,15 +298,117 @@ export const canYouBuyAnEmployeePost: BlogPostItem = {
   tags: ['AI in healthcare', 'Hospital Operations', 'Health Tech'],
   Content: CanYouBuyAnEmployeeContent,
   sources: [
-    'Business Standard: Health insurers disallowed claims worth ₹15,100 cr during FY24 (IRDAI annual report)',
-    'Millennium Post: ₹1.17 lakh crore claimed, ₹10,937 crore repudiated in FY24',
-    'Insurance Business: IRDAI Annual Report 2024-25, 8% of health claims repudiated',
-    'PIB: 5,07,244 medical arrivals in 2025; market at $8.7 billion, $16.2 billion by 2030',
-    'Vijetha Rao: Apollo and Fortis marketing spend as a share of revenue',
-    'Deccan Herald: NPPA analysis of private hospital bills',
-    'Arko: Hospital revenue leakage, 1–5% industry estimate',
-    'Business Today: IRDAI sets 3-hour limit for cashless discharge authorisation',
-    'The Statesman: LocalCircles survey on discharge waiting times',
-    'NIHR Evidence: Discharge communication in three Indian hospitals (PLOS One, 2020)',
+    <span>
+      Business Standard:{' '}
+      <a
+        href="https://business-standard.com/industry/news/health-insurers-disallowed-claims-worth-rs-15-100-cr-during-fy24-irdai-124123000562_1.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="plain-link"
+      >
+        Health insurers disallowed claims worth ₹15,100 cr during FY24
+      </a>{' '}
+      (IRDAI annual report)
+    </span>,
+    <span>
+      Millennium Post:{' '}
+      <a
+        href="https://www.millenniumpost.in/big-stories/health-insurers-reject-claims-worth-rs-15100-cr-during-fy24-592851"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="plain-link"
+      >
+        ₹1.17 lakh crore claimed, ₹10,937 crore repudiated in FY24
+      </a>
+    </span>,
+    <span>
+      Insurance Business:{' '}
+      <a
+        href="https://www.insurancebusinessmag.com/asia/news/life-insurance/irdai-cannot-explain-why-health-insurance-claims-go-unpaid-583814.aspx"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="plain-link"
+      >
+        IRDAI Annual Report 2024-25, 8% of health claims repudiated
+      </a>
+    </span>,
+    <span>
+      PIB:{' '}
+      <a
+        href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/may/doc202652862301.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="plain-link"
+      >
+        5,07,244 medical arrivals in 2025; market at $8.7 billion, $16.2 billion by 2030
+      </a>
+    </span>,
+    <span>
+      Vijetha Rao:{' '}
+      <a
+        href="https://vijetharrao.substack.com/p/healthcare-marketing"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="plain-link"
+      >
+        Apollo and Fortis marketing spend as a share of revenue
+      </a>
+    </span>,
+    <span>
+      Deccan Herald:{' '}
+      <a
+        href="https://www.deccanherald.com/archives/drugs-diagnostics-consumables-form-bulk-1922148"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="plain-link"
+      >
+        NPPA analysis of private hospital bills
+      </a>
+    </span>,
+    <span>
+      Arko:{' '}
+      <a
+        href="https://arko-care.pages.dev/blog/hospital-revenue-leakage"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="plain-link"
+      >
+        Hospital revenue leakage, 1–5% industry estimate
+      </a>
+    </span>,
+    <span>
+      Business Today:{' '}
+      <a
+        href="https://www.businesstoday.in/personal-finance/insurance/story/health-insurance-irdai-sets-3-hour-time-limit-for-insurers-to-clear-cashless-claims-details-here-431354-2024-05-29"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="plain-link"
+      >
+        IRDAI sets 3-hour limit for cashless discharge authorisation
+      </a>
+    </span>,
+    <span>
+      The Statesman:{' '}
+      <a
+        href="https://www.thestatesman.com/business/80-of-health-insurance-policyholders-doubt-intentional-delays-in-claims-report-1503382523.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="plain-link"
+      >
+        LocalCircles survey on discharge waiting times
+      </a>
+    </span>,
+    <span>
+      NIHR Evidence:{' '}
+      <a
+        href="https://evidence.nihr.ac.uk/alert/most-patients-leaving-hospital-in-india-are-given-inadequate-medical-information"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="plain-link"
+      >
+        Discharge communication in three Indian hospitals
+      </a>{' '}
+      (PLOS One, 2020)
+    </span>,
   ],
 };
